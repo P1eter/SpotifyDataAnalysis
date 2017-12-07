@@ -5,7 +5,7 @@ f = pd.read_pickle("datasets/hiphop_features")
 from sklearn.manifold import TSNE
 
 mds = TSNE(n_components=2)
-mds.fit(h.append(f))
+mds.fit_transform(h.append(f))
 
 filename = 'finalized_model.sav'
 pickle.dump(mds, open(filename, 'wb'))
