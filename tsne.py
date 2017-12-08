@@ -4,7 +4,7 @@ h = pd.read_pickle("datasets/house_features")
 f = pd.read_pickle("datasets/hiphop_features")
 from sklearn.manifold import TSNE
 
-mds = TSNE(n_components=2, perplexity = 40)
+mds = TSNE(n_components=2, perplexity = 40, init='pca', random_state=0)
 result = mds.fit_transform(h.append(f))
 
 filename = 'finalized_model.sav'
